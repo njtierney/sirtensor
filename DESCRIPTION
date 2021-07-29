@@ -2,6 +2,7 @@ Package: sirtensor
 Title: Performs SIR simulation for cohort populations using tensorflow
 Version: 0.0.0.9000
 Authors@R: 
+  c(
     person(given = "Nicholas",
            family = "Tierney",
            role = c("aut", "cre"),
@@ -10,7 +11,8 @@ Authors@R:
     person("Nick", "Golding", 
          role = c("aut"),
          email = "nick.golding.research@gmail.com",
-         comment = c(ORCID = "0000-0001-8916-5570")),
+         comment = c(ORCID = "0000-0001-8916-5570"))
+         )
 Description: Performs SIR simulation for cohort populations using tensorflow
 License: MIT + file LICENSE
 Encoding: UTF-8
