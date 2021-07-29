@@ -1,0 +1,24 @@
+Package: sirtensor
+Title: Performs SIR simulation for cohort populations using tensorflow
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Nicholas",
+           family = "Tierney",
+           role = c("aut", "cre"),
+           email = "nicholas.tierney@gmail.com",
+           comment = c(ORCID = "https://orcid.org/0000-0003-1460-8722")),
+    person("Nick", "Golding", 
+         role = c("aut"),
+         email = "nick.golding.research@gmail.com",
+         comment = c(ORCID = "0000-0001-8916-5570")),
+Description: Performs SIR simulation for cohort populations using tensorflow
+License: MIT + file LICENSE
+Encoding: UTF-8
+Language: en-GB
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Config/testthat/edition: 3
+Imports: 
+    tibble,
+    vctrs
