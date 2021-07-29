@@ -34,8 +34,10 @@ devtools::install_github("njtierney/sirtensor")
 This is a basic example
 
 ```{r example}
+set.seed(2021-07-29-1333)
 library(sirtensor)
 new_sims <- pop_sim()
+new_sims
 
 plot(new_sims$S, type = "l", col = "blue", ylim = c(0, new_sims$S[1]))
 lines(new_sims$I, col = "red")
