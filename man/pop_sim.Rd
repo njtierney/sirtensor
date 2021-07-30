@@ -27,7 +27,7 @@ pop_sim(
 \item{p_transmit}{probability of transmission}
 }
 \value{
-data frame with columns, S, I, R.
+data frame with columns: S, I, R, with \code{n} rows.
 }
 \description{
 Generate some simulated values

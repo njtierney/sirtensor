@@ -7,7 +7,7 @@
 #' @param p_recover probability of recovering
 #' @param p_transmit probability of transmission
 #'
-#' @return data frame with columns, S, I, R.
+#' @return data frame with columns: S, I, R, with `n` rows.
 #' @export
 #'
 #' @examples
@@ -27,15 +27,17 @@ pop_sim <- function(
   p_transmit = 0.4
 ){
 
-  # check S, I, R are integers
-  vctrs::vec_assert(n, ptype = integer())
-  vctrs::vec_assert(init_s, ptype = integer())
-  vctrs::vec_assert(init_i, ptype = integer())
-  vctrs::vec_assert(init_r, ptype = integer())
+  # check S, I, R, p_recover, p_transmit are appripriate inputs
+  vctrs::vec_cast(n, integer(), x_arg = "n")
+  vctrs::vec_cast(init_s, integer(), x_arg = "init_s")
+  vctrs::vec_cast(init_i, integer(), x_arg = "init_i")
+  vctrs::vec_cast(init_r, integer(), x_arg = "init_r")
+  vctrs::vec_cast(p_recover, numeric(), x_arg = "p_recover")
+  vctrs::vec_cast(p_transmit, numeric(), x_arg = "p_recover")
 
   # check other values are less than 1
-  vctrs::vec_assert(p_recover, ptype = numeric())
-  vctrs::vec_assert(p_transmit, ptype = numeric())
+  error_value_not_0_1(p_recover)
+  error_value_not_0_1(p_transmit)
 
   S <- I <- R <- rep(NA, n)
   S[1] <- init_s
@@ -61,14 +63,10 @@ pop_sim <- function(
 
   }
 
-  df_sir <- tibble::tibble(
+  tibble::tibble(
     S,
     I,
     R
-  )
-
-  return(
-    df_sir
   )
 
 }
